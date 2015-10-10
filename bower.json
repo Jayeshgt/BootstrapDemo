@@ -1,0 +1,27 @@
+{
+  "name": "havc-system-sales",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Trident SharePoint <jayeshgt@gmail.com>"
+  ],
+  "description": "HVAC System Sales",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "lodash": "~3.10.1"
+  }
+}

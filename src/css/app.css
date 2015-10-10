@@ -1,0 +1,14 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+header,
+footer {
+	background-color: #ddd;
+	text-align: center;
+}
+
+#salesForm {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
