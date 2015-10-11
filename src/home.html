@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HVAC System Sales</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<!-- STYLES -->
+	<!-- build:css lib/css/main.min.css -->
+	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+	<link href="components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+	<link href="css/app.css" rel="stylesheet" />
+	<!-- endbuild -->
+	<!-- SCRIPTS -->
+	<!-- build:js lib/js/main.min.js -->
+	<script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- endbuild -->
+	<!-- Custom Scripts -->
+	<!--<script type="text/javascript" src="js/hvac-sales.min.js"></script>-->
+</head>
+
+<body>
+	<header class="container-fluid">
+		<h1>Header</h1>
+	</header>
+	<div class="container-fluid .center-div">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-2">
+				<form id="salesForm" role="form" data-toggle="validator">
+					<div class="form-group">
+						<label for="txtTech">Tech</label>
+						<input type="text" class="form-control textbox-medium" required="required" id="txtTech" placeholder="Enter Tech">
+					</div>
+					<div class="form-group">
+						<label for="txtSM">SM</label>
+						<input type="text" class="form-control textbox-medium" id="txtSM" placeholder="For customers, enter the SM. For prospects, enter 0.">
+					</div>
+					<div class="form-group">
+						<label for="txtCustomerLastname">Customer Lastname</label>
+						<input type="text" class="form-control textbox-medium" id="txtCustomerLastname" placeholder="Enter Customer Lastname.">
+					</div>
+
+					<div class="form-group">
+						<label for="rdSubmissionType">Submission Type</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdSubmissionType">I Sold this job</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdSubmissionType">I am measuring up this job</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdSubmissionType">Other</label>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control textbox-medium" id="txtSubmissionTypeOther" placeholder="Enter additioanl information for submission type.">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtSalesAmount">Sales Amount</label>
+						<div class="input-group textbox-small">
+							<span class="input-group-addon">$</span>
+							<input type="number" class="form-control" id="txtSalesAmount" min="0" arial-label="Sales Amount.">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtTaskCode">Task Code</label>
+						<input type="text" class="form-control textbox-small" id="txtTaskCode" placeholder="Enter task code.">
+						<div class="screen-tip">
+							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the standard task code. If this is a custom job, enter "none".
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="rdCustomJob">Custom job?</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCustomJob">No - regular task code</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCustomJob">No - minor variation of a task code</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCustomJob">Yes - custom pricing</label>
+						</div>
+						<div class="form-group">
+							<div class="screen-tip">
+								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> You will be asked to complete a custom pricing sheet if you choose "yes." Answer "yes" only when a regular task code (or a MINOR variation of one) is not possible.
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="rdCutSet">Cut and set required?</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCutSet">Yes</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCutSet">No</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="rdCustSetReason">Cut and set reason</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCustSetReason">Failed compressor</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCustSetReason">Leaking condensing coil</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdCustSetReason">Other - include reason</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="rdSCOL">SCOL?</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdSCOL">Yes</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdSCOL">No</label>
+						</div>
+						<div class="form-group">
+							<div class="screen-tip">
+								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale?
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="rdFargo">Wells Fargo financed?</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdFargo">No</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdFargo">Yes</label>
+						</div>
+						<div class="form-group">
+							<div class="screen-tip">
+								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale?
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="ddlWellsFargoPlanCode">Wells Fargo plan code</label>
+						<div class="form-group">
+							<select required="required" id="ddlWellsFargoPlanCode" name="ddlWellsFargoPlanCode" class="form-select required">
+								<option value="" selected="selected">- Select -</option>
+								<option value="1274">2228: Any time. Reduced rate of 9.9%.</option>
+								<option value="4079">4079: Any time. Special rate 0% with 24 equal payments.</option>
+								<option value="1148">1148: Any time. No interest if paid in 6 months with regular monthly payments.</option>
+								<option value="1019">1019: Any time. No interest if paid in 12 months with regular monthly payments.</option>
+								<option value="1066">1066: Any time. No interest if paid in 18 months with regular payments.</option>
+								<option value="2141">2141: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 36 equal payments.</option>
+								<option value="2142">2142: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 48 equal payments.</option>
+								<option value="2143">2143: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 60 equal payments.</option>
+								<option value="Other">Other: Enter details in Comments and call Manager.</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<div class="screen-tip">
+								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the plan code associated with the financing terms you have offered. Make sure the purchase is eligible for the plan code selected. The code must be entered also on the hard copy sales slip that is signed by your customer.
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="rdLocation">System Location</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdLocation">Basement</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdLocation">Attic</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdLocation">Crawl Space</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdLocation">Main Floor</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdLocation">Other</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control textbox-medium" id="txtLocationOther" placeholder="Enter additioanl information for System Location.">
+					</div>
+					<div class="form-group">
+						<label for="rdWalkout">Walkout</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdWalkout">Yes</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="rdWalkout">No</label>
+						</div>
+					</div>
+					<!--Attic Option On-->
+					<div class="form-group">
+						<fieldset>
+							<legend>Attic</legend>
+							<div class="form-group">
+								<label for="rdAtticAccess">Attic Access</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="rdAtticAccess">Yes</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="rdAtticAccess">No</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningDepth">Attic Opening with Trim Depth</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningDepth" placeholder="Enter Attic Opening with Trim Depth.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidth">Attic Opening with Trim Width</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidth" placeholder="Enter Attic Opening with Trim Width.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutDepth">Attic Opening without Trim Depth</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutDepth" placeholder="Enter Attic Opening without Trim Depth.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">Attic Opening without Trim Depth</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+
+							<div class="form-group">
+								<label for="rdStraircase">Staircase or Trim Removal Required</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="rdStraircase">Yes</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="rdStraircase">No</label>
+								</div>
+								<div class="form-group">
+									<div class="screen-tip">
+										<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> If yes, add cost of carpenter plus 10%.
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<!-- Attic Option end-->
+					<div class="form-group">
+						<label for="txtCrawlSpaceOpening">Crawl Space Opening</label>
+						<input type="text" class="form-control textbox-medium" id="txtCrawlSpaceOpening" placeholder="Enter Crawl Space Opening.">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputFile">File input</label>
+						<input type="file" id="exampleInputFile">
+						<p class="help-block">Example block-level help text here.</p>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Check me out
+						</label>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer class="container-fluid">
+		<h1>Footer</h1>
+	</footer>
+</body>
+
+</html>

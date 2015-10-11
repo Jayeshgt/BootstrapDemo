@@ -12,3 +12,70 @@ footer {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+
+.textbox-small {
+	width: 30%;
+}
+
+.textbox-extra-small {
+	width: 15%;
+}
+
+.textbox-medium {
+	width: 65%;
+}
+
+.textbox-large {
+	width: 80%;
+}
+
+.screen-tip {
+	font-size: 0.85em;
+	color: #00f;
+	font-weight: 200;
+	display: block;
+	padding-top: 10px;
+}
+
+.add-top-space {
+	padding-top: 10px;
+	margin-top: 10px;
+}
+
+.form-top-right-border {
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top-right-radius: 1px;
+}
+
+.tab-pane {
+	animation-delay: 0.2s;
+	-moz-animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+}
+
+@media only screen and (max-device-width: 600px) {}
+
+.center-div {
+	margin: 0 auto;
+	width: 80%/* value of your choice which suits your alignment */
+}
+
+.form-group.required .control-label:after {
+	content: "*";
+	color: red;
+}
+
+fieldset legend {
+	margin-bottom: 0;
+}
+
+fieldset > .content {
+	padding-top: 20px;
+}
+
+hr {
+	border-top: 1px dotted #000000 !important;
+	margin-bottom: 5px !important;
+	margin-top: 5px !important;
+}
