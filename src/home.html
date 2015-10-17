@@ -10,213 +10,231 @@
 	<!-- build:css lib/css/main.min.css -->
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
 	<link href="components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="components/animate.less/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
 	<link href="css/app.css" rel="stylesheet" />
 	<!-- endbuild -->
 	<!-- SCRIPTS -->
 	<!-- build:js lib/js/main.min.js -->
 	<script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="components/jquery-validation/dist/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="components/angular/angular.min.js"></script>
 	<!-- endbuild -->
 	<!-- Custom Scripts -->
-	<!--<script type="text/javascript" src="js/hvac-sales.min.js"></script>-->
+	<script type="text/javascript" src="js/hvac-sales.min.js"></script>
 </head>
 
 <body>
 	<header class="container-fluid">
-		<h1>Header</h1>
+		<h1>HVAC System Sales</h1>
 	</header>
-	<div class="container-fluid .center-div">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-2">
-				<form id="salesForm" role="form" data-toggle="validator">
-					<div class="form-group">
-						<label for="txtTech">Tech</label>
-						<input type="text" class="form-control textbox-medium" required="required" id="txtTech" placeholder="Enter Tech">
-					</div>
-					<div class="form-group">
-						<label for="txtSM">SM</label>
-						<input type="text" class="form-control textbox-medium" id="txtSM" placeholder="For customers, enter the SM. For prospects, enter 0.">
-					</div>
-					<div class="form-group">
-						<label for="txtCustomerLastname">Customer Lastname</label>
-						<input type="text" class="form-control textbox-medium" id="txtCustomerLastname" placeholder="Enter Customer Lastname.">
-					</div>
+	<div class="container-fluid">
+		<div class="row add-top-space">
+			<div class="col-xs-1 col-sm-1">
+				<!-- required for floating -->
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs tabs-left sideways pull-left">
+					<li class="active"><a href="#step1" data-toggle="tab">Page 1</a></li>
+					<li><a href="#step2" data-toggle="tab">Page 2</a></li>
+					<li><a href="#step3" data-toggle="tab">Page 3</a></li>
+					<li><a href="#step4" data-toggle="tab">Page 4</a></li>
+					<li><a href="#step5" data-toggle="tab">Page 5</a></li>
+					<li><a href="#step6" data-toggle="tab">Page 6</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-11 col-sm-10">
+				<!-- Tab panes -->
+				<div class="tab-content well">
+					<div class="tab-pane active animated fadeInLeft" id="step1">
+						<div class="form-group">
+							<label for="txtTech">Tech</label>
+							<input type="text" class="form-control textbox-medium" required="required" id="txtTech" placeholder="Enter Tech">
+						</div>
+						<div class="form-group">
+							<label for="txtSM">SM</label>
+							<input type="text" class="form-control textbox-medium" id="txtSM" placeholder="For customers, enter the SM. For prospects, enter 0.">
+						</div>
+						<div class="form-group">
+							<label for="txtCustomerLastname">Customer Lastname</label>
+							<input type="text" class="form-control textbox-medium" id="txtCustomerLastname" placeholder="Enter Customer Lastname.">
+						</div>
 
-					<div class="form-group">
-						<label for="rdSubmissionType">Submission Type</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdSubmissionType">I Sold this job</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdSubmissionType">I am measuring up this job</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdSubmissionType">Other</label>
-						</div>
 						<div class="form-group">
-							<input type="text" class="form-control textbox-medium" id="txtSubmissionTypeOther" placeholder="Enter additioanl information for submission type.">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="txtSalesAmount">Sales Amount</label>
-						<div class="input-group textbox-small">
-							<span class="input-group-addon">$</span>
-							<input type="number" class="form-control" id="txtSalesAmount" min="0" arial-label="Sales Amount.">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="txtTaskCode">Task Code</label>
-						<input type="text" class="form-control textbox-small" id="txtTaskCode" placeholder="Enter task code.">
-						<div class="screen-tip">
-							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the standard task code. If this is a custom job, enter "none".
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="rdCustomJob">Custom job?</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCustomJob">No - regular task code</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCustomJob">No - minor variation of a task code</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCustomJob">Yes - custom pricing</label>
-						</div>
-						<div class="form-group">
-							<div class="screen-tip">
-								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> You will be asked to complete a custom pricing sheet if you choose "yes." Answer "yes" only when a regular task code (or a MINOR variation of one) is not possible.
+							<label for="rdSubmissionType">Submission Type</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdSubmissionType">I Sold this job</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdSubmissionType">I am measuring up this job</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdSubmissionType">Other</label>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control textbox-medium" id="txtSubmissionTypeOther" placeholder="Enter additioanl information for submission type.">
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="rdCutSet">Cut and set required?</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCutSet">Yes</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCutSet">No</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="rdCustSetReason">Cut and set reason</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCustSetReason">Failed compressor</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCustSetReason">Leaking condensing coil</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdCustSetReason">Other - include reason</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="rdSCOL">SCOL?</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdSCOL">Yes</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdSCOL">No</label>
-						</div>
 						<div class="form-group">
-							<div class="screen-tip">
-								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale?
+							<label for="txtSalesAmount">Sales Amount</label>
+							<div class="input-group textbox-small">
+								<span class="input-group-addon">$</span>
+								<input type="number" class="form-control" id="txtSalesAmount" min="0" arial-label="Sales Amount.">
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="rdFargo">Wells Fargo financed?</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdFargo">No</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdFargo">Yes</label>
-						</div>
 						<div class="form-group">
+							<label for="txtTaskCode">Task Code</label>
+							<input type="text" class="form-control textbox-small" id="txtTaskCode" placeholder="Enter task code.">
 							<div class="screen-tip">
-								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale?
+								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the standard task code. If this is a custom job, enter "none".
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="ddlWellsFargoPlanCode">Wells Fargo plan code</label>
 						<div class="form-group">
-							<select required="required" id="ddlWellsFargoPlanCode" name="ddlWellsFargoPlanCode" class="form-select required">
-								<option value="" selected="selected">- Select -</option>
-								<option value="1274">2228: Any time. Reduced rate of 9.9%.</option>
-								<option value="4079">4079: Any time. Special rate 0% with 24 equal payments.</option>
-								<option value="1148">1148: Any time. No interest if paid in 6 months with regular monthly payments.</option>
-								<option value="1019">1019: Any time. No interest if paid in 12 months with regular monthly payments.</option>
-								<option value="1066">1066: Any time. No interest if paid in 18 months with regular payments.</option>
-								<option value="2141">2141: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 36 equal payments.</option>
-								<option value="2142">2142: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 48 equal payments.</option>
-								<option value="2143">2143: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 60 equal payments.</option>
-								<option value="Other">Other: Enter details in Comments and call Manager.</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<div class="screen-tip">
-								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the plan code associated with the financing terms you have offered. Make sure the purchase is eligible for the plan code selected. The code must be entered also on the hard copy sales slip that is signed by your customer.
+							<label for="rdCustomJob">Custom job?</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCustomJob">No - regular task code</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCustomJob">No - minor variation of a task code</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCustomJob">Yes - custom pricing</label>
+							</div>
+							<div class="form-group">
+								<div class="screen-tip">
+									<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> You will be asked to complete a custom pricing sheet if you choose "yes." Answer "yes" only when a regular task code (or a MINOR variation of one) is not possible.
+								</div>
 							</div>
 						</div>
+						<div class="form-group">
+							<label for="rdCutSet">Cut and set required?</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCutSet">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCutSet">No</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdCustSetReason">Cut and set reason</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCustSetReason">Failed compressor</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCustSetReason">Leaking condensing coil</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdCustSetReason">Other - include reason</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdSCOL">SCOL?</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdSCOL">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdSCOL">No</label>
+							</div>
+							<div class="form-group">
+								<div class="screen-tip">
+									<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale?
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdFargo">Wells Fargo financed?</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdFargo">No</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdFargo">Yes</label>
+							</div>
+							<div class="form-group">
+								<div class="screen-tip">
+									<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale?
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ddlWellsFargoPlanCode">Wells Fargo plan code</label>
+							<div class="form-group">
+								<select required="required" id="ddlWellsFargoPlanCode" name="ddlWellsFargoPlanCode" class="form-select required">
+									<option value="" selected="selected">- Select -</option>
+									<option value="1274">2228: Any time. Reduced rate of 9.9%.</option>
+									<option value="4079">4079: Any time. Special rate 0% with 24 equal payments.</option>
+									<option value="1148">1148: Any time. No interest if paid in 6 months with regular monthly payments.</option>
+									<option value="1019">1019: Any time. No interest if paid in 12 months with regular monthly payments.</option>
+									<option value="1066">1066: Any time. No interest if paid in 18 months with regular payments.</option>
+									<option value="2141">2141: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 36 equal payments.</option>
+									<option value="2142">2142: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 48 equal payments.</option>
+									<option value="2143">2143: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 60 equal payments.</option>
+									<option value="Other">Other: Enter details in Comments and call Manager.</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<div class="screen-tip">
+									<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the plan code associated with the financing terms you have offered. Make sure the purchase is eligible for the plan code selected. The code must be entered also on the hard copy sales slip that is signed by your customer.
+								</div>
+							</div>
+						</div>
+
 					</div>
-					<div class="form-group">
-						<label for="rdLocation">System Location</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdLocation">Basement</label>
+					<div class="tab-pane animated fadeInLeft" id="step2">
+						<div class="form-group">
+							<label for="rdLocation">System Location</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLocation">Basement</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLocation">Attic</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLocation">Crawl Space</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLocation">Main Floor</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLocation">Other</label>
+							</div>
 						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdLocation">Attic</label>
+						<div class="form-group">
+							<input type="text" class="form-control textbox-medium" id="txtLocationOther" placeholder="Enter additioanl information for System Location.">
 						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdLocation">Crawl Space</label>
+						<div class="form-group">
+							<label for="rdWalkout">Walkout</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdWalkout">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdWalkout">No</label>
+							</div>
 						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdLocation">Main Floor</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdLocation">Other</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control textbox-medium" id="txtLocationOther" placeholder="Enter additioanl information for System Location.">
-					</div>
-					<div class="form-group">
-						<label for="rdWalkout">Walkout</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdWalkout">Yes</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="rdWalkout">No</label>
-						</div>
-					</div>
-					<!--Attic Option On-->
-					<div class="form-group">
-						<fieldset>
-							<legend>Attic</legend>
+						<!--Attic Option On-->
+						<div class="form-group">
 							<div class="form-group">
 								<label for="rdAtticAccess">Attic Access</label>
 								<div class="radio">
@@ -261,31 +279,290 @@
 									</div>
 								</div>
 							</div>
-						</fieldset>
+						</div>
+						<!-- Attic Option end-->
+						<div class="form-group">
+							<label for="txtCrawlSpaceOpening">Crawl Space Opening</label>
+							<input type="text" class="form-control textbox-medium" id="txtCrawlSpaceOpening" placeholder="Enter Crawl Space Opening.">
+						</div>
 					</div>
-					<!-- Attic Option end-->
-					<div class="form-group">
-						<label for="txtCrawlSpaceOpening">Crawl Space Opening</label>
-						<input type="text" class="form-control textbox-medium" id="txtCrawlSpaceOpening" placeholder="Enter Crawl Space Opening.">
+					<div class="tab-pane animated fadeInLeft" id="step3">
+						<div class="form-group">
+							<label for="rdACHP">AC/HP</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdACHP">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdACHP">No</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="txtACHPModel">Model</label>
+							<input type="text" class="form-control textbox-medium" name="txtACHPModel" id="txtACHPModel" placeholder="Enter Model.">
+						</div>
+
+						<div class="form-group">
+							<label for="txtTonnage">Tonnage</label>
+							<input type="text" class="form-control textbox-medium" id="txtTonnage" name="txtTonnage" placeholder="Enter Tonnage.">
+						</div>
+
+						<div class="form-group">
+							<label for="txtManufacturer">Manufacturer</label>
+							<input type="text" class="form-control textbox-medium" id="txtManufacturer" name="txtManufacturer" placeholder="Enter Manufacturer.">
+						</div>
+						<hr>
+						<div class="form-group">
+							<label for="rdClearance">5' Clearance Above Outdoor Unit</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdClearance">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdClearance">No</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdFenced">Fenced Yard</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdFenced">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdFenced">No</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ddlLineSet">Line Set Suction Diameter</label>
+							<div>
+								<select id="ddlLineSet" name="ddlLineSet">
+									<option selected="selected" value="">- None -</option>
+									<option value="1">1/2</option>
+									<option value="2">5/8</option>
+									<option value="3">3/4</option>
+									<option value="4">7/8</option>
+									<option value="5">1 1/8</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdLineSetSuction">Line Set Suction Diameter</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLineSetSuction">1/4</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLineSetSuction">5/16</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLineSetSuction">3/8</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdLineSetSuction">1/2</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="txtLineSetTotalLength">Line Set Total Length</label>
+							<input type="number" class="form-control textbox-small" name="txtLineSetTotalLength" id="txtLineSetTotalLength" placeholder="Enter Line Set Total Length.">
+						</div>
+
+						<div class="form-group">
+							<label for="txtLineSetVerticalLift">Line Set Vertical Lift</label>
+							<input type="number" class="form-control textbox-small" id="txtLineSetVerticalLift" name="txtLineSetVerticalLift" placeholder="Enter Line Set Vertical Lift.">
+						</div>
+
+						<div class="form-group">
+							<label for="txtAccessWidth">Access Width</label>
+							<input type="number" class="form-control textbox-small" id="txtAccessWidth" name="txtAccessWidth" placeholder="Enter Access Width.">
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="exampleInputFile">File input</label>
-						<input type="file" id="exampleInputFile">
-						<p class="help-block">Example block-level help text here.</p>
+					<div class="tab-pane animated fadeInLeft" id="step4">
+						<div class="form-group">
+							<label for="rdAirHander">Air Handler / Furnace</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdAirHander">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdAirHander">No</label>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group">
+							<label for="txtAirHandlerModel">Model</label>
+							<input type="text" class="form-control textbox-medium" name="txtAirHandlerModel" id="txtAirHandlerModel" placeholder="Enter Model.">
+						</div>
+
+						<div class="form-group">
+							<label for="txtTonnageBTU">Tonnage/BTUs</label>
+							<input type="text" class="form-control textbox-medium" id="txtTonnageBTU" name="txtTonnageBTU" placeholder="Enter Tonnage/BTUs">
+						</div>
+
+						<div class="form-group">
+							<label for="txtAirHandlerManufacturer">Manufacturer</label>
+							<input type="text" class="form-control textbox-medium" id="txtAirHandlerManufacturer" name="txtAirHandlerManufacturer" placeholder="Enter Manufacturer.">
+						</div>
+						<div class="form-group">
+							<label for="txtHeadKitKW">Heat Kit KW</label>
+							<input type="text" class="form-control textbox-medium" id="txtHeadKitKW" name="txtHeadKitKW" placeholder="Enter Heat Kit KW.">
+						</div>
+						<div class="form-group">
+							<label for="rdAirHander">Air Handler / Furnace</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdAirHander">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdAirHander">No</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdPropane">Propane</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdPropane">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdPropane">No</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdComburstion">Combustion Air Needed</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdComburstion">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdComburstion">No</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rdDoestItVentIntoAChimney">Does it vent into a chimney?</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdDoestItVentIntoAChimney">Yes</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdDoestItVentIntoAChimney">No</label>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group">
+							<label for="atticOpeningDepth">Air Handler Height</label>
+							<input type="number" class="form-control textbox-small" id="atticOpeningDepth" placeholder="Enter Attic Opening with Trim Depth.">
+						</div>
+						<div class="form-group">
+							<label for="atticOpeningWidth">Air Handler Width</label>
+							<input type="number" class="form-control textbox-small" id="atticOpeningWidth" placeholder="Enter Attic Opening with Trim Width.">
+						</div>
+						<div class="form-group">
+							<label for="atticOpeningWidthoutDepth">Air Handler Depth</label>
+							<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutDepth" placeholder="Enter Attic Opening without Trim Depth.">
+						</div>
+						<div class="form-group">
+							<label for="atticOpeningWidthoutWidth">Height of box under Air Handler</label>
+							<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+						</div>
+
+						<div class="form-group">
+							<label for="atticOpeningWidthoutWidth">Return Air Duct Depth</label>
+							<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+						</div>
+
+						<div class="form-group">
+							<label for="atticOpeningWidthoutWidth">Return Air Duct Depth</label>
+							<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+						</div>
+						<div class="form-group">
+							<label for="rdDoestItVentIntoAChimney">Flue Type</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdDoestItVentIntoAChimney">Single Wall</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdDoestItVentIntoAChimney">B-Vent</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdDoestItVentIntoAChimney">PVC</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rdDoestItVentIntoAChimney">N/A</label>
+							</div>
+							<hr>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">Flue Diameter</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">90° Quantity</label>
+								<input type="text" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">Length to TEE or Crock</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+							<!-- PVC Optiion Enabled -->
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">PVC Diameter</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">PVC Length</label>
+								<input type="text" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">PVC 90° Quantity</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+							<div class="form-group">
+								<label for="atticOpeningWidthoutWidth">PVC 45° Quantity</label>
+								<input type="number" class="form-control textbox-small" id="atticOpeningWidthoutWidth" placeholder="Enter Attic Opening without Trim Width.">
+							</div>
+							<div class="form-group">
+								<label for="rdDoestItVentIntoAChimney">PVC Extend 2'</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="rdDoestItVentIntoAChimney">Yes</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="rdDoestItVentIntoAChimney">No</label>
+								</div>
+								<div class="form-group">
+									<div class="screen-tip">
+										<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> If PVC flue extends greater than or equal to 2' outside add cost of insulating flue pipe.
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> Check me out
-						</label>
+					<div class="tab-pane animated fadeInLeft" id="step5">
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+					<div class="tab-pane animated fadeInLeft" id="step6">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1">
 			</div>
 		</div>
-	</div>
-	<footer class="container-fluid">
-		<h1>Footer</h1>
-	</footer>
+		<footer class="container-fluid">
+			<h1>Footer</h1>
+		</footer>
 </body>
 
 </html>

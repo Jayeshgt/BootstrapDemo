@@ -1,0 +1,156 @@
+<div class="form-group has-error">
+	<label for="attic-Tech" class="control-label">Tech</label>
+	<div class="input-group textbox-medium"> <span class="input-group-addon required">*</span>
+		<input type="text" class="form-control textbox-medium" aria-describedby="attr-Tech" required maxlength="255" id="attic-Tech" name="attic-Tech" placeholder="Enter Tech" ng-model="vm.salesItem.atticTech">
+	</div>
+</div>
+<div class="form-group" style="display:none;">
+	<label for="attic-SM" class="control-label">SM</label>
+	<input type="text" class="form-control textbox-medium" id="attic-SM" name="attic-SM" placeholder="For customers, enter the SM. For prospects, enter 0." ng-model="vm.salesItem.SM">
+</div>
+<div class="form-group">
+	<label class="control-label" for="attic-CustomerName">Customer Lastname</label>
+	<div class="input-group textbox-medium"> <span class="input-group-addon required">*</span>
+		<input type="text" class="form-control" required="required" id="attic-CustomerName" aria-describedby="attic-customerName" placeholder="Enter Customer First and Lastname." ng-model="vm.salesItem.atticCustomerName">
+	</div>
+</div>
+<div class="form-group">
+	<label for="attic-Address" class="control-label">Address</label>
+	<div class="input-group textbox-medium"> <span class="input-group-addon required">*</span>
+		<input type="text" class="form-control textbox-medium" id="attic-Address" name="attic-Address" placeholder="For customers, enter the customer LOCATION information. For prospects, enter '0'." required ng-model="vm.salesItem.atticAddress">
+	</div>
+	<div class="screen-tip help-block"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> For customers, enter the customer LOCATION information. For prospects, enter '0'.</div>
+</div>
+<div class="form-group">
+	<label for="attic-SubmissionType">Submission Type</label>
+	<div class="radio radio-success">
+		<input type="radio" id="attic-submissionType1" ng-model="vm.salesItem.atticSubmissionType" value="1" name="attic-SubmissionType">
+		<label for="attic-submissionType1"> I Sold this job</label>
+	</div>
+	<div class="radio radio-success">
+		<input type="radio" id="attic-submissionType2" ng-model="vm.salesItem.atticSubmissionType" value="2" name="attic-SubmissionType">
+		<label for="attic-submissionType2"> I am measuring up this job</label>
+	</div>
+	<div class="radio radio-success">
+		<input type="radio" id="attic-submissionType3" ng-model="vm.salesItem.atticSubmissionType" value="Other" name="attic-SubmissionType">
+		<label for="attic-submissionType3">Other</label>
+	</div>
+	<div class="form-group textbox-medium animate-show" ng-show="vm.salesItem.atticSubmissionType=='Other'">
+		<div class="input-group"> <span class="input-group-addon required">*</span>
+			<input type="text" class="form-control textbox-medium" required="required" id="attic-CustomerName" aria-describedby="attic-customerName" placeholder="Enter Customer First and Lastname." ng-model="vm.salesItem.atticSubmissionTypeOther">
+		</div>
+	</div>
+</div>
+<div class="form-group">
+	<label for="attic-SalesAmount">Sales Amount</label>
+	<div class="input-group textbox-small"> <span class="input-group-addon">$</span>
+		<input type="number" class="form-control" id="attic-SalesAmount" name="attic-SalesAmount" min="0" arial-label="Sales Amount." ng-model="vm.salesItem.atticSalesAmount">
+	</div>
+</div>
+<div class="form-group">
+	<label for="atticCustomJob">Custom job?</label>
+	<div class="radio radio-success">
+
+		<input type="radio" name="atticCustomJob" value="1" ng-model="vm.salesItem.atticCustomJob">
+		<label> No - regular task code</label>
+	</div>
+	<div class="radio radio-success">
+
+		<input type="radio" name="atticCustomJob" value="2" ng-model="vm.salesItem.atticCustomJob">
+		<label> No - minor variation of a task code</label>
+	</div>
+	<div class="radio radio-success">
+
+		<input type="radio" name="atticCustomJob" value="3" ng-model="vm.salesItem.atticCustomJob">
+		<label> Yes - custom pricing</label>
+	</div>
+	<div class="form-group">
+		<div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> You will be asked to complete a custom pricing sheet if you choose "yes." Answer "yes" only when a regular task code (or a MINOR variation of one) is not possible. </div>
+	</div>
+</div>
+<div class="form-group">
+	<label for="atticTaskCode">Task Code</label>
+	<input type="text" class="form-control textbox-small" id="atticTaskCode" name="atticTaskCode" placeholder="Enter task code." ng-model="vm.salesItem.atticTaskCode">
+	<div class="screen-tip help-block"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the standard task code. If this is a custom job, enter "none". </div>
+</div>
+<div class="form-group">
+	<label for="atticSCOL">SCOL?</label>
+	<div class="radio radio-success">
+		<input type="radio" name="atticSCOL" ng-model="vm.salesItem.atticSCOL" value="Yes">
+		<label>Yes</label>
+	</div>
+	<div class="radio radio-success">
+		<input type="radio" name="atticSCOL" ng-model="vm.salesItem.atticSCOL" value="No">
+		<label>No</label>
+	</div>
+	<div class="form-group">
+		<div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale? </div>
+	</div>
+</div>
+<div class="form-group animate-show" ng-show="vm.salesItem.atticSCOL=='Yes'">
+	<label for="atticCustSetRequired">Cut and set required?</label>
+	<div class="radio  radio-success">
+		<input type="radio" name="atticCustSetRequired" value="Yes" ng-model="vm.salesItem.atticCutSetRequired">
+		<label>Yes</label>
+	</div>
+	<div class="radio radio-success">
+		<input type="radio" name="atticCustSetRequired" value="No" ng-model="vm.salesItem.atticCutSetRequired">
+		<label>No</label>
+	</div>
+</div>
+<div class="form-group animate-show" ng-show="vm.salesItem.atticCutSetRequired == 'Yes'">
+	<label for="atticCutSetReason">Cut and set reason</label>
+	<div class="radio radio-success">
+		<input type="radio" name="atticCutSetReason" ng-model="vm.salesItem.atticCutSetReason" value="Failed Compressor">
+		<label> Failed compressor</label>
+	</div>
+	<div class="radio radio-success">
+
+		<input type="radio" name="atticCutSetReason" ng-model="vm.salesItem.atticCutSetReason" value="Leaking Condensing Coil">
+		<label> Leaking condensing coil</label>
+	</div>
+	<div class="radio radio-success">
+
+		<input type="radio" name="atticCutSetReason" ng-model="vm.salesItem.atticCutSetReason" value="Other">
+		<label> Other - include reason</label>
+	</div>
+	<div class="form-group textbox-medium animate-show" ng-show="vm.salesItem.atticCutSetReason=='Other'">
+		<div class="input-group"> <span class="input-group-addon required">*</span>
+			<input type="text" class="form-control textbox-medium" required="required" id="attic-CutSetReasonOther" aria-describedby="attic-atticCutSetReasonOther" placeholder="Cut and Set Reason Other" ng-model="vm.salesItem.atticCutSetReasonOther">
+		</div>
+	</div>
+</div>
+<div class="form-group">
+	<label for="atticFargo">Wells Fargo financed?</label>
+	<div class="radio radio-success">
+		<input type="radio" name="atticFargo" ng-model="vm.salesItem.atticFargo" value="No">
+		<label>No</label>
+	</div>
+	<div class="radio radio-success">
+		<input type="radio" name="atticFargo" ng-model="vm.saleItem.atticFargo" value="Yes">
+		<label>Yes</label>
+	</div>
+	<div class="form-group">
+		<div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Is this a Summer Comfort on Loan sale? </div>
+	</div>
+</div>
+<div class="form-group">
+	<label for="atticWellsFargoPlanCode">Wells Fargo plan code</label>
+	<div class="form-group">
+		<select required="required" id="atticWellsFargoPlanCode" name="atticWellsFargoPlanCode" ng-model="vm.salesItem.atticWellsFargoPlanCode">
+			<option value="" selected="selected">- Select -</option>
+			<option value="1274">2228: Any time. Reduced rate of 9.9%.</option>
+			<option value="4079">4079: Any time. Special rate 0% with 24 equal payments.</option>
+			<option value="1148">1148: Any time. No interest if paid in 6 months with regular monthly payments.</option>
+			<option value="1019">1019: Any time. No interest if paid in 12 months with regular monthly payments.</option>
+			<option value="1066">1066: Any time. No interest if paid in 18 months with regular payments.</option>
+			<option value="2141">2141: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 36 equal payments.</option>
+			<option value="2142">2142: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 48 equal payments.</option>
+			<option value="2143">2143: Sep 15 - Nov 15 2014. Eligible equipment only. 0% with 60 equal payments.</option>
+			<option value="Other">Other: Enter details in Comments and call Manager.</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the plan code associated with the financing terms you have offered. Make sure the purchase is eligible for the plan code selected. The code must be entered also on the hard copy sales slip that is signed by your customer. </div>
+	</div>
+</div>
