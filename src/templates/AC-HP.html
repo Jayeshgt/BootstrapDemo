@@ -1,0 +1,42 @@
+<div class="form-group" ng-class="{'has-error':salesForm.achp.$invalid}">
+    <label for="achp" class="control-label">AC/HP</label><span style='color:red'>*</span>
+    <div class="radio radio-success">
+        <input type="radio" name="achp" required ng-model="vm.salesItem.achp" value="Yes" required>
+        <label>Yes</label>
+    </div>
+    <div class="radio radio-success">
+        <input type="radio" name="achp" required ng-model="vm.salesItem.achp" value="No" required>
+        <label>No</label>
+    </div>
+</div>
+<fieldset>
+    <div class="form-group" ng-class="{'has-error':salesForm.achpModel.$invalid && salesForm.achpModel.$touched}">
+        <label class="control-label" for="achpModel">Model</label>
+
+        <input type="text" class="form-control textbox-medium" id="atticCustomerName" name="atticCustomerName" aria-describedby="achpModel" placeholder="Enter Model" ng-model="vm.salesItem.achpModel" ng-maxlength="255">
+
+        <span class="help-block has-error" ng-show="salesForm.achpModel.$touched">            
+        <span ng-show="salesForm.achpModel.$error.maxlength">Max length 255 characters</span>
+        </span>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.achpTonnage.$invalid && salesForm.achpTonnage.$touched}">
+        <label class="control-label" for="achpTonnage">Tonnage</label>
+
+        <input type="text" class="form-control textbox-medium" id="achpTonnage" name="achpTonnage" aria-describedby="achpTonnage" placeholder="Enter Tonnage" ng-model="vm.salesItem.achpTonnage" ng-maxlength="255">
+
+        <span class="help-block has-error" ng-show="salesForm.achpTonnage.$touched">            
+        <span ng-show="salesForm.achpTonnage.$error.maxlength">Max length 255 characters</span>
+        </span>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.achpManufacturer.$invalid && salesForm.achpManufacturer.$touched}">
+        <label class="control-label" for="achpManufacturer">Model</label>
+
+        <input type="text" class="form-control textbox-medium" id="achpManufacturer" name="achpManufacturer" aria-describedby="achpManufacturer" placeholder="Enter Manufacturer" ng-model="vm.salesItem.achpManufacturer" ng-maxlength="255">
+
+        <span class="help-block has-error" ng-show="salesForm.achpManufacturer.$touched">            
+        <span ng-show="salesForm.achpManufacturer.$error.maxlength">Max length 255 characters</span>
+        </span>
+    </div>
+</fieldset>

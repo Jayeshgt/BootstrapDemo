@@ -56,11 +56,14 @@
         </div>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{'has-error':salesForm.atticSalesAmount.$invalid && salesForm.atticSalesAmount.$touched}">
     <label for="atticSalesAmount">Sales Amount</label>
     <div class="input-group textbox-small"> <span class="input-group-addon">$</span>
         <input type="number" class="form-control" id="atticSalesAmount" name="atticSalesAmount" min="0" arial-label="Sales Amount." ng-model="vm.salesItem.atticSalesAmount">
     </div>
+    <span class="help-block has-error" ng-show="salesForm.atticSalesAmount.$touched">
+            <span ng-show="salesForm.atticSalesAmount.$error.number">Sales Amount should be number.</span>
+    </span>
 </div>
 <div class="form-group" ng-class="{'has-error':salesForm.atticCustomJob.$invalid}">
     <label for="atticCustomJob" class="control-label">Custom job?</label><span style='color:red'>*</span>
@@ -164,5 +167,116 @@
     </div>
     <div class="form-group">
         <div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Enter the plan code associated with the financing terms you have offered. Make sure the purchase is eligible for the plan code selected. The code must be entered also on the hard copy sales slip that is signed by your customer. </div>
+    </div>
+</div>
+
+<div class="form-group" ng-class="{'has-error':salesForm.atticSystemLocation.$invalid}">
+    <label for="atticFargo" class="control-label">System Location</label><span style='color:red'>*</span>
+    <div class="radio radio-success">
+        <input type="radio" name="atticSystemLocation" required ng-model="vm.salesItem.atticSystemLocation" value="1">
+        <label>Basement</label>
+    </div>
+    <div class="radio radio-success">
+        <input type="radio" name="atticSystemLocation" required ng-model="vm.salesItem.atticSystemLocation" value="2">
+        <label>Attic</label>
+    </div>
+    <div class="radio radio-success">
+        <input type="radio" name="atticSystemLocation" required ng-model="vm.salesItem.atticSystemLocation" value="3">
+        <label>Crawl Space</label>
+    </div>
+    <div class="radio radio-success">
+        <input type="radio" name="atticSystemLocation" required ng-model="vm.salesItem.atticSystemLocation" value="4">
+        <label>Main Floor</label>
+    </div>
+    <div class="radio radio-success">
+        <input type="radio" name="atticSystemLocation" required ng-model="vm.salesItem.atticSystemLocation" value="Other">
+        <label>Other</label>
+    </div>
+    <div class="form-group textbox-medium animate-show" ng-show="vm.salesItem.atticSystemLocation=='Other'" ng-class="{'has-error':salesForm.atticSystemLocationOther.$invalid && salesForm.atticSystemLocationOther.$touched}">
+        <div class="input-group"> <span class="input-group-addon required">*</span>
+            <input type="text" class="form-control textbox-medium" id="atticSystemLocationOther" name="atticSystemLocationOther" aria-describedby="atticSystemLocationOther" placeholder="System Location Other (Required)" ng-model="vm.salesItem.atticSystemLocationOther" ng-required="vm.salesItem.atticSystemLocation == 'Other'">
+        </div>
+    </div>
+    <div class="form-group" ng-show="vm.salesItem.atticSystemLocation == '1'">
+        <label for="atticFargo" class="control-label">Walkout</label>
+        <div class="radio radio-success">
+            <input type="radio" name="atticWalkout" ng-model="vm.salesItem.atticWalkout" value="Yes">
+            <label>Yes</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="atticWalkout" ng-model="vm.salesItem.atticWalkout" value="No">
+            <label>No</label>
+        </div>
+    </div>
+    <div class="form-group textbox-medium animate-show" ng-show="vm.salesItem.atticSystemLocation=='3'">
+        <label for="atticCrawlSpaceOpening" class="control-label">Crawl Space Opening</label>
+        <input type="text" class="form-control textbox-medium" id="atticCrawlSpaceOpening" name="atticCrawlSpaceOpening" aria-describedby="atticCrawlSpaceOpening" placeholder="Crawl Space Opening" ng-model="vm.salesItem.atticCrawlSpaceOpening">
+    </div>
+    <div class="form-group animate-show textbox-medium" ng-show="vm.salesItem.atticSystemLocation=='2'">
+        <fieldset>
+            <legend>Attic</legend>
+            <div class="form-group">
+                <label for="atticAccess" class="control-label">Attic Access</label>
+                <div class="radio radio-success">
+                    <input type="radio" name="atticAccess" ng-model="vm.salesItem.atticAccess" value="Pull Down">
+                    <label>Attic Access</label>
+                </div>
+                <div class="radio radio-success">
+                    <input type="radio" name="atticAccess" ng-model="vm.salesItem.atticAccess" value="Access Panel">
+                    <label>Access Panel</label>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error':salesForm.atticOpeningTripDepth.$invalid && salesForm.atticOpeningTripDepth.$touched}">
+                <label for="atticOpeningTripDepth" class="control-label">Attic Opening with Trim Depth</label>
+                <div class="input-group textbox-small">
+                    <input type="number" class="form-control textbox-small" name="atticOpeningTripDepth" ng-model="vm.salesItem.atticOpeningTripDepth">
+                </div>
+                <span class="help-block has-error" ng-show="salesForm.atticOpeningTripDepth.$touched">
+            <span ng-show="salesForm.atticOpeningTripDepth.$error.number">Attic Opening with Trim Depth should be number.</span>
+                </span>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':salesForm.atticOpeningTripWidth.$invalid && salesForm.atticOpeningTripWidth.$touched}">
+                <label for="atticOpeningTripWidth" class="control-label">Attic Opening with Trim Width</label>
+
+                <input type="number" class="form-control textbox-small" name="atticOpeningTripWidth" ng-model="vm.salesItem.atticOpeningTripWidth">
+
+                <span class="help-block has-error" ng-show="salesForm.atticOpeningTripWidth.$touched">
+            <span ng-show="salesForm.atticOpeningTripWidth.$error.number">Attic Opening with Trim Width should be number.</span>
+                </span>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':salesForm.atticOpeningWithoutTripDepth.$invalid && salesForm.atticOpeningWithoutTripDepth.$touched}">
+                <label for="atticOpeningWithoutTripDepth" class="control-label">Attic Opening without Trim Depth</label>
+
+                <input type="number" class="form-control textbox-small" name="atticOpeningWithoutTripDepth" ng-model="vm.salesItem.atticOpeningWithoutTripDepth">
+
+                <span class="help-block has-error" ng-show="salesForm.atticOpeningWithoutTripDepth.$touched">
+            <span ng-show="salesForm.atticOpeningWithoutTripDepth.$error.number">Attic Opening without Trim Depth should be number.</span>
+                </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':salesForm.atticOpeningWithoutTripWidth.$invalid && salesForm.atticOpeningWithoutTripWidth.$touched}">
+                <label for="atticOpeningWithoutTripWidth" class="control-label">Attic Opening without Trim Width</label>
+                <input type="number" class="form-control textbox-medium" name="atticOpeningWithoutTripWidth" ng-model="vm.salesItem.atticOpeningWithoutTripWidth">
+                <span class="help-block has-error" ng-show="salesForm.atticOpeningWithoutTripWidth.$touched">
+            <span ng-show="salesForm.atticOpeningWithoutTripWidth.$error.number">Attic Opening without Trim Width should be number.</span>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label for="atticStaircase" class="control-label">Staircase or Trim Removal Required</label>
+                <div class="radio radio-success">
+                    <input type="radio" name="atticStaircase" ng-model="vm.salesItem.atticStaircase" value="Yes">
+                    <label>Yes</label>
+                </div>
+                <div class="radio radio-success">
+                    <input type="radio" name="atticStaircase" ng-model="vm.salesItem.atticStaircase" value="No">
+                    <label>No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span>If yes, add cost of carpenter plus 10%.</div>
+            </div>
+        </fieldset>
     </div>
 </div>
