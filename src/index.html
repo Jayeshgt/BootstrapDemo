@@ -2,79 +2,80 @@
 <html ng-app="app">
 
 <head>
-	<title>HVAC System Sales</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<!-- STYLES -->
-	<!-- build:css lib/css/main.min.css -->
-	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
-	<link href="components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="components/animate.less/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
-	<link href="css/app.css" rel="stylesheet" />
-	<!-- endbuild -->
-	<!-- SCRIPTS -->
-	<!-- build:js lib/js/main.min.js -->
-	<script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="components/jquery-validation/dist/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="components/angular-animate/angular-animate.min.js"></script>
-	<!-- endbuild -->
-	<!-- Custom Scripts -->
-	<script type="text/javascript" src="js/hvac-sales.min.js"></script>
+    <title>HVAC System Sales</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- STYLES -->
+    <!-- build:css lib/css/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="components/animate.less/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
+    <link href="css/app.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <!-- SCRIPTS -->
+    <!-- build:js lib/js/main.min.js -->
+    <script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="components/angular-animate/angular-animate.min.js"></script>
+    <!-- endbuild -->
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/hvac-sales.min.js"></script>
 </head>
 
 <body>
-	<div class="container-fluid">
-		<div class="row add-top-space">
-			<div class="col-xs-1 col-sm-1">
-				<!-- required for floating -->
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs tabs-left sideways pull-left">
-					<li class="active"><a href="#step1" data-toggle="tab">Attic</a></li>
-					<li><a href="#step2" data-toggle="tab">AC/HP</a></li>
-					<li><a href="#step3" data-toggle="tab">Furnace</a></li>
-					<li><a href="#step4" data-toggle="tab">Air Handler</a></li>
-					<li><a href="#step5" data-toggle="tab">EC</a></li>
-					<li><a href="#step6" data-toggle="tab">Evap Coil</a></li>
-					<li><a href="#step7" data-toggle="tab">AH / EC</a></li>
-					<li><a href="#step8" data-toggle="tab">Electrical</a></li>
-					<li><a href="#step9" data-toggle="tab">Condensate</a></li>
-				</ul>
-			</div>
-			<!-- Tab panes started -->
-			<div class="col-xs-10 col-sm-10">
-				<form role="form">
-					<div class="tab-content well" ng-controller="MyController as vm">
-						<div class="tab-pane animated fadeInLeft" id="step1">
-							<div class="slide-animate" ng-include="'templates/Attic.html'"></div>
-						</div>
-						<div class="tab-pane animated fadeInLeft" id="step2"> </div>
-						<div class="tab-pane animated fadeInLeft" id="step3"> </div>
-						<div class="tab-pane animated fadeInLeft" id="step4"> </div>
-						<div class="tab-pane animated fadeInLeft" id="step5"> </div>
-						<div class="tab-pane animated fadeInLeft" id="step6"> </div>
-					</div>
-				</form>
-				<!-- Tab panes -->
-			</div>
-			<div class="col-xs-1 col-sm-1">
-				<ul class="nav nav-tabs tabs-right sideways pull-right">
-					<li class="active"><a href="#step1" data-toggle="tab">Attic</a></li>
-					<li><a href="#step2" data-toggle="tab">AC/HP</a></li>
-					<li><a href="#step3" data-toggle="tab">Furnace</a></li>
-					<li><a href="#step4" data-toggle="tab">Air Handler</a></li>
-					<li><a href="#step5" data-toggle="tab">EC</a></li>
-					<li><a href="#step6" data-toggle="tab">Evap Coil</a></li>
-					<li><a href="#step7" data-toggle="tab">AH / EC</a></li>
-					<li><a href="#step8" data-toggle="tab">Electrical</a></li>
-					<li><a href="#step9" data-toggle="tab">Condensate</a></li>
-				</ul>
-			</div>
-		</div>
+    <div class="container-fluid">
+        <div class="row add-top-space">
+            <div class="col-xs-1 col-sm-1">
+                <!-- required for floating -->
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-left sideways pull-left">
+                    <li class="active"><a href="#step1" data-toggle="tab">Attic</a></li>
+                    <li><a href="#step2" data-toggle="tab">AC/HP</a></li>
+                    <li><a href="#step3" data-toggle="tab">Furnace</a></li>
+                    <li><a href="#step4" data-toggle="tab">Air Handler</a></li>
+                    <li><a href="#step5" data-toggle="tab">EC</a></li>
+                    <li><a href="#step6" data-toggle="tab">Evap Coil</a></li>
+                    <li><a href="#step7" data-toggle="tab">AH / EC</a></li>
+                    <li><a href="#step8" data-toggle="tab">Electrical</a></li>
+                    <li><a href="#step9" data-toggle="tab">Condensate</a></li>
+                </ul>
+            </div>
+            <!-- Tab panes started -->
+            <div class="col-xs-10 col-sm-10">
+                <form role="form" name="salesForm" id="salesForm" novalidate>
+                    <div class="tab-content well" ng-controller="MyController as vm">
+                        <div class="tab-pane animated fadeInLeft" id="step1">
+                            <div class="slide-animate" ng-include="'templates/Attic.html'"></div>
+                        </div>
+                        <div class="tab-pane animated fadeInLeft" id="step2"> </div>
+                        <div class="tab-pane animated fadeInLeft" id="step3"> </div>
+                        <div class="tab-pane animated fadeInLeft" id="step4"> </div>
+                        <div class="tab-pane animated fadeInLeft" id="step5"> </div>
+                        <div class="tab-pane animated fadeInLeft" id="step6"> </div>
+                    </div>
+                </form>
+                <!-- Tab panes -->
+            </div>
+            <div class="col-xs-1 col-sm-1">
+                <ul class="nav nav-tabs tabs-right sideways pull-right">
+                    <li class="active"><a href="#step1" data-toggle="tab">Attic</a></li>
+                    <li><a href="#step2" data-toggle="tab">AC/HP</a></li>
+                    <li><a href="#step3" data-toggle="tab">Furnace</a></li>
+                    <li><a href="#step4" data-toggle="tab">Air Handler</a></li>
+                    <li><a href="#step5" data-toggle="tab">EC</a></li>
+                    <li><a href="#step6" data-toggle="tab">Evap Coil</a></li>
+                    <li><a href="#step7" data-toggle="tab">AH / EC</a></li>
+                    <li><a href="#step8" data-toggle="tab">Electrical</a></li>
+                    <li><a href="#step9" data-toggle="tab">Condensate</a></li>
+                </ul>
+            </div>
+        </div>
+        {{salesForm.$invalid}}
 </body>
 
 </html>
