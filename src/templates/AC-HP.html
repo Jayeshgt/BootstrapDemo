@@ -1,11 +1,11 @@
 <div class="form-group" ng-class="{'has-error':salesForm.achp.$invalid}">
     <label for="achp" class="control-label">AC/HP</label><span style='color:red'>*</span>
     <div class="radio radio-success">
-        <input type="radio" name="achp" required ng-model="vm.salesItem.achp" value="Yes" required>
+        <input type="radio" name="achp" ng-model="vm.salesItem.achp" value="Yes" required>
         <label>Yes</label>
     </div>
     <div class="radio radio-success">
-        <input type="radio" name="achp" required ng-model="vm.salesItem.achp" value="No" required>
+        <input type="radio" name="achp" ng-model="vm.salesItem.achp" value="No" required>
         <label>No</label>
     </div>
 </div>
@@ -13,7 +13,7 @@
     <div class="form-group" ng-class="{'has-error':salesForm.achpModel.$invalid && salesForm.achpModel.$touched}">
         <label class="control-label" for="achpModel">Model</label>
 
-        <input type="text" class="form-control textbox-medium" id="atticCustomerName" name="atticCustomerName" aria-describedby="achpModel" placeholder="Enter Model" ng-model="vm.salesItem.achpModel" ng-maxlength="255">
+        <input type="text" class="form-control textbox-medium" id="achpModel" name="achpModel" aria-describedby="achpModel" placeholder="Enter Model" ng-model="vm.salesItem.achpModel" ng-maxlength="255">
 
         <span class="help-block has-error" ng-show="salesForm.achpModel.$touched">            
         <span ng-show="salesForm.achpModel.$error.maxlength">Max length 255 characters</span>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="form-group" ng-class="{'has-error':salesForm.achpManufacturer.$invalid && salesForm.achpManufacturer.$touched}">
-        <label class="control-label" for="achpManufacturer">Model</label>
+        <label class="control-label" for="achpManufacturer">Manufacturer</label>
 
         <input type="text" class="form-control textbox-medium" id="achpManufacturer" name="achpManufacturer" aria-describedby="achpManufacturer" placeholder="Enter Manufacturer" ng-model="vm.salesItem.achpManufacturer" ng-maxlength="255">
 
@@ -39,4 +39,88 @@
         <span ng-show="salesForm.achpManufacturer.$error.maxlength">Max length 255 characters</span>
         </span>
     </div>
+
+    <div class="form-group animate-show" ng-show="vm.salesItem.achp == 'Yes'">
+        <label for="achpClearanceAbove" class="control-label">5' Clearance Above Outdoor Unit</label>
+        <div class="radio radio-success">
+            <input type="radio" name="achpClearanceAbove" ng-model="vm.salesItem.achpClearanceAbove" value="Yes">
+            <label>Yes</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="achpClearanceAbove" ng-model="vm.salesItem.achpClearanceAbove" value="No">
+            <label>No</label>
+        </div>
+    </div>
+    <div class="form-group animate-show" ng-show="vm.salesItem.achp == 'Yes'">
+        <label for="achpFencedYard" class="control-label">Fenced Yard</label>
+        <div class="radio radio-success">
+            <input type="radio" name="achpFencedYard" ng-model="vm.salesItem.achpFencedYard" value="Yes">
+            <label>Yes</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="achpFencedYard" ng-model="vm.salesItem.achpFencedYard" value="No">
+            <label>No</label>
+        </div>
+    </div>
+    <div class="form-group textbox-medium animate-show" ng-show="vm.salesItem.achp == 'Yes'">
+        <label for="achpLineSetSuction" class="control-label">Line Set Suction Diameter</label>
+        <select class="form-select form-control" name="achpLineSetSuction" ng-model="vm.salesItem.achpLineSetSuction">
+            <option value="" selected="selected">- None -</option>
+            <option value="1">1/2</option>
+            <option value="2">5/8</option>
+            <option value="3">3/4</option>
+            <option value="4">7/8</option>
+            <option value="5">1 1/8</option>
+        </select>
+    </div>
+    <div class="form-group animate-show" ng-show="vm.salesItem.achp == 'Yes'">
+        <label for="achpLineSetLiquid" class="control-label">Line Set Liquid Diameter</label>
+        <div class="radio radio-success">
+            <input type="radio" name="achpLineSetLiquid" ng-model="vm.salesItem.achpLineSetLiquid" value="1/4">
+            <label>1/4</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="achpLineSetLiquid" ng-model="vm.salesItem.achpLineSetLiquid" value="5/16">
+            <label>5/16</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="achpLineSetLiquid" ng-model="vm.salesItem.achpLineSetLiquid" value="3/8">
+            <label>3/8</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="achpLineSetLiquid" ng-model="vm.salesItem.achpLineSetLiquid" value="1/2">
+            <label>1/2</label>
+        </div>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.achpLineSetTotal.$invalid && salesForm.achpLineSetTotal.$touched}" ng-show="vm.salesItem.achp == 'Yes'">
+        <label class="control-label" for="achpLineSetTotal">Line Set Total Length</label>
+
+        <input type="number" class="form-control textbox-medium" id="achpLineSetTotal" name="achpLineSetTotal" aria-describedby="achpLineSetTotal" placeholder="Enter Line Set Total Length" ng-model="vm.salesItem.achpLineSetTotal">
+
+        <span class="help-block has-error" ng-show="salesForm.achpLineSetTotal.$touched">            
+        <span ng-show="salesForm.achpLineSetTotal.$error.number">Should be number</span>
+        </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.achpLineSetVertical.$invalid && salesForm.achpLineSetVertical.$touched}" ng-show="vm.salesItem.achp == 'Yes'">
+        <label class="control-label" for="achpLineSetVertical">Line Set Vertical Lift</label>
+
+        <input type="number" class="form-control textbox-medium" id="achpLineSetVertical" name="achpLineSetVertical" aria-describedby="achpLineSetVertical" placeholder="Enter Line Set Vertical Lift" ng-model="vm.salesItem.achpLineSetVertical">
+
+        <span class="help-block has-error" ng-show="salesForm.achpLineSetVertical.$touched">            
+        <span ng-show="salesForm.achpLineSetVertical.$error.number">should be number.</span>
+        </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.achpAccessWidth.$invalid && salesForm.achpAccessWidth.$touched}" ng-show="vm.salesItem.achp == 'Yes'">
+        <label class="control-label" for="achpAccessWidth">Access Width</label>
+
+        <input type="number" class="form-control textbox-medium" id="achpAccessWidth" name="achpAccessWidth" aria-describedby="achpAccessWidth" placeholder="Enter Access Width" ng-model="vm.salesItem.achpAccessWidth">
+
+        <span class="help-block has-error" ng-show="salesForm.achpAccessWidth.$touched">            
+        <span ng-show="salesForm.achpAccessWidth.$error.number">Should be number.</span>
+        </span>
+    </div>
+
 </fieldset>

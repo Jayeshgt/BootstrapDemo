@@ -14,7 +14,7 @@
     <input type="text" class="form-control textbox-medium" id="atticSM" name="atticSM" placeholder="For customers, enter the SM. For prospects, enter 0." ng-model="vm.salesItem.atticSM">
 </div>
 <div class="form-group" ng-class="{'has-error':salesForm.atticCustomerName.$invalid && salesForm.atticCustomerName.$touched}">
-    <label class="control-label" for="atticCustomerName">Customer Lastname</label>
+    <label class="control-label" for="atticCustomerName">Customer Name</label>
     <div class="input-group textbox-medium"> <span class="input-group-addon required">*</span>
         <input type="text" class="form-control" required id="atticCustomerName" name="atticCustomerName" aria-describedby="atticCustomerName" placeholder="Enter Customer First and Lastname." ng-model="vm.salesItem.atticCustomerName" required ng-minlegnth="1" ng-maxlength="255">
     </div>

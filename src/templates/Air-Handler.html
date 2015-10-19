@@ -1,0 +1,249 @@
+<div class="form-group" ng-class="{'has-error':salesForm.ahFurnace.$invalid}">
+    <label for="achp" class="control-label">Air Handler / Furnace</label><span style='color:red'>*</span>
+    <div class="radio radio-success">
+        <input type="radio" name="ahFurnace" ng-model="vm.salesItem.ahFurnace" value="Yes" required>
+        <label>Yes</label>
+    </div>
+    <div class="radio radio-success">
+        <input type="radio" name="ahFurnace" ng-model="vm.salesItem.ahFurnace" value="No" required>
+        <label>No</label>
+    </div>
+</div>
+<fieldset>
+    <div class="form-group" ng-class="{'has-error':salesForm.ahModel.$invalid && salesForm.ahModel.$touched}">
+        <label class="control-label" for="ahModel">Model</label>
+
+        <input type="text" class="form-control textbox-medium" id="ahModel" name="ahModel" aria-describedby="ahModel" placeholder="Enter Model" ng-model="vm.salesItem.ahModel" ng-maxlength="255">
+
+        <span class="help-block has-error" ng-show="salesForm.ahModel.$touched">            
+        <span ng-show="salesForm.ahModel.$error.maxlength">Max length 255 characters</span>
+        </span>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.ahTonnage.$invalid && salesForm.ahTonnage.$touched}">
+        <label class="control-label" for="ahTonnage">Tonnage/BTUs</label>
+
+        <input type="text" class="form-control textbox-medium" id="ahTonnage" name="ahTonnage" aria-describedby="ahTonnage" placeholder="Enter Tonnage" ng-model="vm.salesItem.ahTonnage" ng-maxlength="255">
+
+        <span class="help-block has-error" ng-show="salesForm.ahTonnage.$touched">            
+        <span ng-show="salesForm.ahTonnage.$error.maxlength">Max length 255 characters</span>
+        </span>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.ahManufacturer.$invalid && salesForm.ahManufacturer.$touched}">
+        <label class="control-label" for="ahManufacturer">Manufacturer</label>
+
+        <input type="text" class="form-control textbox-medium" id="ahManufacturer" name="ahManufacturer" aria-describedby="ahManufacturer" placeholder="Enter Manufacturer" ng-model="vm.salesItem.ahManufacturer" ng-maxlength="255">
+
+        <span class="help-block has-error" ng-show="salesForm.ahManufacturer.$touched">            
+        <span ng-show="salesForm.ahManufacturer.$error.maxlength">Max length 255 characters</span>
+        </span>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.ahHeatKitKW.$invalid && salesForm.ahHeatKitKW.$touched}">
+        <label class="control-label" for="ahHeatKitKW">Heat Kit KW</label>
+
+        <input type="text" class="form-control textbox-medium" id="ahHeatKitKW" name="ahHeatKitKW" aria-describedby="ahHeatKitKW" placeholder="Enter Heat Kit KW" ng-model="vm.salesItem.ahHeatKitKW" ng-maxlength="255">
+
+        <span class="help-block has-error" ng-show="salesForm.ahHeatKitKW.$touched">            
+        <span ng-show="salesForm.ahManufacturer.$error.maxlength">Max length 255 characters</span>
+        </span>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.ahPropane.$invalid}">
+        <label for="achp" class="control-label">Propane</label>
+        <div class="radio radio-success">
+            <input type="radio" name="ahPropane" ng-model="vm.salesItem.ahPropane" value="Yes">
+            <label>Yes</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="ahPropane" ng-model="vm.salesItem.ahPropane" value="No">
+            <label>No</label>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.ahCombustion.$invalid}">
+        <label for="achp" class="control-label">Combustion Air Needed</label>
+        <div class="radio radio-success">
+            <input type="radio" name="ahCombustion" ng-model="vm.salesItem.ahCombustion" value="Yes">
+            <label>Yes</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="ahCombustion" ng-model="vm.salesItem.ahCombustion" value="No">
+            <label>No</label>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':salesForm.ahDoesItVent.$invalid}">
+        <label for="achp" class="control-label">Does it vent into a chimney?</label>
+        <div class="radio radio-success">
+            <input type="radio" name="ahDoesItVent" ng-model="vm.salesItem.ahDoesItVent" value="Yes">
+            <label>Yes</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="ahDoesItVent" ng-model="vm.salesItem.ahDoesItVent" value="No">
+            <label>No</label>
+        </div>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.ahHeight.$invalid && salesForm.ahHeight.$touched}" ng-show="vm.salesItem.ahFurnace == 'Yes'">
+        <label class="control-label" for="ahHeight">Air Handler Height</label>
+
+        <input type="number" class="form-control textbox-small" id="ahHeight" name="ahHeight" aria-describedby="ahHeight" placeholder="Air Handler Height" ng-model="vm.salesItem.ahHeight">
+
+        <span class="help-block has-error" ng-show="salesForm.ahHeight.$touched">            
+        <span ng-show="salesForm.ahHeight.$error.number">Should be number</span>
+        </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.ahWidth.$invalid && salesForm.ahWidth.$touched}" ng-show="vm.salesItem.ahFurnace == 'Yes'">
+        <label class="control-label" for="ahWidth">Air Handler Width</label>
+
+        <input type="number" class="form-control textbox-small" id="ahWidth" name="ahWidth" aria-describedby="ahWidth" placeholder="Air Handler Width" ng-model="vm.salesItem.ahWidth">
+
+        <span class="help-block has-error" ng-show="salesForm.achpLineSetVertical.$touched">            
+        <span ng-show="salesForm.achpLineSetVertical.$error.number">should be number.</span>
+        </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.ahDepth.$invalid && salesForm.ahDepth.$touched}" ng-show="vm.salesItem.ahFurnace == 'Yes'">
+        <label class="control-label" for="ahDepth">Air Handler Depth</label>
+
+        <input type="number" class="form-control textbox-small" id="ahDepth" name="ahDepth" aria-describedby="ahDepth" placeholder="Enter Air Hanlder Depth" ng-model="vm.salesItem.ahDepth">
+
+        <span class="help-block has-error" ng-show="salesForm.ahDepth.$touched">            
+        <span ng-show="salesForm.ahDepth.$error.number">Should be number.</span>
+        </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.ahHeight.$invalid && salesForm.ahHeight.$touched}" ng-show="vm.salesItem.ahFurnace == 'Yes'">
+        <label class="control-label" for="ahHeight">Height of box under Air Handle</label>
+
+        <input type="number" class="form-control textbox-small" id="ahHeight" name="ahHeight" aria-describedby="ahHeight" placeholder="Enter Air Hanlder Height" ng-model="vm.salesItem.ahHeight">
+
+        <span class="help-block has-error" ng-show="salesForm.ahHeight.$touched">            
+        <span ng-show="salesForm.ahHeight.$error.number">Should be number.</span>
+        </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.ahReturnAirDuctDepth.$invalid && salesForm.ahReturnAirDuctDepth.$touched}" ng-show="vm.salesItem.ahFurnace == 'Yes'">
+        <label class="control-label" for="ahReturnAirDuctDepth">Return Air Duct Depth</label>
+
+        <input type="number" class="form-control textbox-small" id="ahReturnAirDuctDepth" name="ahReturnAirDuctDepth" aria-describedby="ahReturnAirDuctDepth" placeholder="Return Air Duct Depth" ng-model="vm.salesItem.ahReturnAirDuctDepth">
+
+        <span class="help-block has-error" ng-show="salesForm.ahReturnAirDuctDepth.$touched">            
+        <span ng-show="salesForm.ahReturnAirDuctDepth.$error.number">Should be number.</span>
+        </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.ahReturnAirDuctWidth.$invalid && salesForm.ahReturnAirDuctWidth.$touched}" ng-show="vm.salesItem.ahReturnAirDuctWidth == 'Yes'">
+        <label class="control-label" for="ahReturnAirDuctWidth">Return Air Duct Width</label>
+
+        <input type="number" class="form-control textbox-small" id="ahReturnAirDuctWidth" name="ahReturnAirDuctWidth" aria-describedby="ahReturnAirDuctWidth" placeholder="Return Air Duct Width" ng-model="vm.salesItem.ahReturnAirDuctWidth">
+
+        <span class="help-block has-error" ng-show="salesForm.ahReturnAirDuctWidth.$touched">            
+<span ng-show="salesForm.ahReturnAirDuctWidth.$error.number">Should be number.</span> </span>
+    </div>
+
+    <div class="form-group animate-show" ng-class="{'has-error':salesForm.ahFlueType.$invalid}" ng-show="vm.salesItem.ahFurnace == 'Yes'">
+        <label for="ahFlueType" class="control-label">Flue Type</label>
+        <div class="radio radio-success">
+            <input type="radio" name="ahFlueType" ng-model="vm.salesItem.ahFlueType" value="1">
+            <label>Single Wall</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="ahFlueType" ng-model="vm.salesItem.ahFlueType" value="2">
+            <label> B-Vent</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="ahFlueType" ng-model="vm.salesItem.ahFlueType" value="3">
+            <label> PVC
+            </label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="ahFlueType" ng-model="vm.salesItem.ahFlueType" value="4">
+            <label> N/A</label>
+        </div>
+        <fieldset class="animate-show" ng-show="vm.salesItem.ahFlueType=='1' || vm.salesItem.ahFlueType=='2'">
+            <legend>Single Wall / B-Vent</legend>
+            <div class="form-group" ng-class="{'has-error':salesForm.ahFlueDiameter.$invalid && salesForm.ahFlueDiameter.$touched}">
+                <label class="control-label" for="ahFlueDiameter">Flue Diameter</label>
+
+                <input type="number" class="form-control textbox-small" id="ahFlueDiameter" name="ahFlueDiameter" aria-describedby="ahFlueDiameter" placeholder="Flue Diameter" ng-model="vm.salesItem.ahFlueDiameter">
+
+                <span class="help-block has-error" ng-show="salesForm.ahFlueDiameter.$touched">            
+<span ng-show="salesForm.ahFlueDiameter.$error.number">Should be number.</span> </span>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':salesForm.ahQuantity.$invalid && salesForm.ahQuantity.$touched}">
+                <label class="control-label" for="ahQuantity">90° Quantity</label>
+
+                <input type="text" class="form-control textbox-small" id="ahQuantity" name="ahQuantity" aria-describedby="ahQuantity" ng-maxlength="255" placeholder="90 Quantity" ng-model="vm.salesItem.ahQuantity">
+
+                <span class="help-block has-error" ng-show="salesForm.ahQuantity.$touched">            
+<span ng-show="salesForm.ahQuantity.$error.maxlength">Should be number.</span> </span>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':salesForm.ahTEE.$invalid && salesForm.ahTEE.$touched}">
+                <label class="control-label" for="ahTEE">Length to TEE or Crock</label>
+
+                <input type="text" class="form-control textbox-small" id="ahTEE" name="ahTEE" aria-describedby="ahTEE" ng-maxlength="255" placeholder="Length to TEE or Crock" ng-model="vm.salesItem.ahTEE">
+
+                <span class="help-block has-error" ng-show="salesForm.ahTEE.$touched">            
+<span ng-show="salesForm.ahTEE.$error.maxlength">Should be number.</span> </span>
+            </div>
+        </fieldset>
+
+        <fieldset class="animate-show" ng-show="vm.salesItem.ahFlueType=='3'">
+            <legend>PVC</legend>
+            <div class="form-group" ng-class="{'has-error':salesForm.ahPVCDiameter.$invalid && salesForm.ahPVCDiameter.$touched}">
+                <label class="control-label" for="ahPVCDiameter">PVC Diameter</label>
+
+                <input type="number" class="form-control textbox-small" id="ahPVCDiameter" name="ahPVCDiameter" aria-describedby="ahPVCDiameter" placeholder="PVC Diameter" ng-model="vm.salesItem.ahPVCDiameter">
+
+                <span class="help-block has-error" ng-show="salesForm.ahPVCDiameter.$touched">            
+<span ng-show="salesForm.ahPVCDiameter.$error.number">Should be number.</span> </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':salesForm.ahPVCLength.$invalid && salesForm.ahPVCLength.$touched}">
+                <label class="control-label" for="ahPVCLength">PVC Length</label>
+
+                <input type="number" class="form-control textbox-small" id="ahPVCLength" name="ahPVCLength" aria-describedby="ahPVCLength" placeholder="PVC Lengthr" ng-model="vm.salesItem.ahPVCLength">
+
+                <span class="help-block has-error" ng-show="salesForm.ahPVCLength.$touched">            
+<span ng-show="salesForm.ahPVCLength.$error.number">Should be number.</span> </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':salesForm.ah90Quantity.$invalid && salesForm.ah90Quantity.$touched}">
+                <label class="control-label" for="ah90Quantity">PVC 90° Quantity</label>
+
+                <input type="number" class="form-control textbox-small" id="ah90Quantity" name="ah90Quantity" aria-describedby="ah90Quantity" placeholder="PVC 90° Quantity" ng-model="vm.salesItem.ah90Quantity">
+
+                <span class="help-block has-error" ng-show="salesForm.ah90Quantity.$touched">            
+<span ng-show="salesForm.ah90Quantity.$error.number">Should be number.</span> </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':salesForm.ah45Quantity.$invalid && salesForm.ah45Quantity.$touched}">
+                <label class="control-label" for="ah45Quantity">PVC 45° Quantity</label>
+
+                <input type="number" class="form-control textbox-small" id="ah45Quantity" name="ah45Quantity" aria-describedby="ah45Quantity" placeholder="PVC 45° Quantity" ng-model="vm.salesItem.ah45Quantity">
+
+                <span class="help-block has-error" ng-show="salesForm.ah45Quantity.$touched">            
+<span ng-show="salesForm.ah45Quantity.$error.number">Should be number.</span> </span>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':salesForm.ahPVCExtend.$invalid}">
+                <label for="ahPVCExtend" class="control-label">PVC Extend 2' </label>
+                <div class="radio radio-success">
+                    <input type="radio" name="ahPVCExtend" value="Yes" ng-model="vm.salesItem.ahPVCExtend">
+                    <label>Yes</label>
+                </div>
+                <div class="radio radio-success">
+                    <input type="radio" name="ahPVCExtend" value="No" ng-model="vm.salesItem.ahPVCExtend">
+                    <label>No</label>
+                </div>
+                <div class="form-group">
+                    <div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> If PVC flue extends greater than or equal to 2' outside add cost of insulating flue pipe.</div>
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+</fieldset>
