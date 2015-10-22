@@ -86,6 +86,21 @@
             </div>
         </div>
         {{salesForm.$invalid}}
+
+        <script>
+            $(document).ready(function () {
+
+                $('input[type=file]').change(function () {
+                    alert(1);
+                    var val = $(this).val().toLowerCase();
+                    var regex = new RegExp("(.*?)\.(jpg|png|gif|jpeg)$");
+                    if (!(regex.test(val))) {
+                        $(this).val('');
+                        alert('Please select correct file format');
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>

@@ -1,45 +1,124 @@
 <div class="form-group has-feedback  animate-show">
     <fieldset>
         <legend>Condensate Pump</legend>
-        <div class="form-group" ng-class="{'has-error':salesForm.elManufacturer.$invalid && salesForm.elManufacturer.$touched}">
-            <label class="control-label" for="elManufacturer">Electrical Panel Manufacturer</label>
-
-            <input type="text" class="form-control textbox-medium" id="elManufacturer" name="elManufacturer" aria-describedby="elManufacturer" placeholder="Electrical Panel Manufacturer" ng-model="vm.salesItem.elManufacturer" ng-maxlength="255">
-
-            <span class="help-block has-error" ng-show="salesForm.elManufacturer.$touched">            
-<span ng-show="salesForm.elManufacturer.$error.maxlength">Max 255 characters.</span> </span>
+        <div class="form-group" ng-class="{'has-error':salesForm.conPump.$invalid}">
+            <label for="conPump" class="control-label">Condensate Pump</label>
+            <div class="radio radio-success">
+                <input type="radio" name="conPump" ng-model="vm.salesItem.conPump" value="Yes">
+                <label>Yes</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conPump" ng-model="vm.salesItem.conPump" value="No">
+                <label>No</label>
+            </div>
         </div>
-        <div class="form-group textbox-medium" ng-class="{'has-error':salesForm.elBreaker.$invalid && salesForm.elBreaker.$touched}">
-            <label class="control-label" for="elBreaker">Breaker Amps - Indoor Unit</label>
-
-            <input type="number" class="form-control textbox-medium" id="elBreaker" name="elBreaker" aria-describedby="elBreaker" placeholder="Breaker Amps - Indoor Unit" ng-model="vm.salesItem.elBreaker">
-
-            <span class="help-block has-error" ng-show="salesForm.elBreaker.$touched">            
-<span ng-show="salesForm.elBreaker.$error.number">Should be number.</span> </span>
+        <div class="form-group" ng-class="{'has-error':salesForm.conGrade.$invalid}">
+            <label for="conGrade" class="control-label">Grade > 1/8" per foot</label>
+            <div class="radio radio-success">
+                <input type="radio" name="conGrade" ng-model="vm.salesItem.conGrade" value="Yes">
+                <label>Yes</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conGrade" ng-model="vm.salesItem.conGrade" value="No">
+                <label>No</label>
+            </div>
+            <div class="form-group">
+                <div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Humidifier must drain outside house.</div>
+            </div>
         </div>
-        <div class="form-group textbox-medium" ng-class="{'has-error':salesForm.elBreakerAmps.$invalid && salesForm.elBreakerAmps.$touched}">
-            <label class="control-label" for="elBreakerAmps">Breaker Amps - Outdoor Unit</label>
-
-            <input type="number" class="form-control textbox-medium" id="elBreakerAmps" name="elBreakerAmps" aria-describedby="elBreakerAmps" placeholder="Breaker Amps - Outdoor Unit" ng-model="vm.salesItem.elBreakerAmps" ng-maxlength="255">
-
-            <span class="help-block has-error" ng-show="salesForm.elBreakerAmps.$touched">            
-<span ng-show="salesForm.elBreakerAmps.$error.maxlength">Max 255 characters.</span> </span>
+        <div class="form-group" ng-class="{'has-error':salesForm.conTermination.$invalid}">
+            <label for="conTermination" class="control-label">Condensate Termination</label>
+            <div class="radio radio-success">
+                <input type="radio" name="conTermination" ng-model="vm.salesItem.conTermination" value="1">
+                <label>Floor Drain</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conTermination" ng-model="vm.salesItem.conTermination" value="2">
+                <label>Laundry Tub</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conTermination" ng-model="vm.salesItem.conTermination" value="3">
+                <label>Outside</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conTermination" ng-model="vm.salesItem.conTermination" value="4">
+                <label>Sump Crock</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conTermination" ng-model="vm.salesItem.conTermination" value="5">
+                <label>Other</label>
+            </div>
+            <div class="form-group textbox-medium animate-show" ng-show="vm.salesItem.conTermination=='5'" ng-class="{'has-error':salesForm.conTerminationOther.$invalid && salesForm.conTerminationOther.$touched}">
+                <div class="input-group"> <span class="input-group-addon required">*</span>
+                    <input type="text" class="form-control textbox-medium" id="conTerminationOther" name="conTerminationOther" aria-describedby="conTerminationOther" placeholder="Condensate Termination(Required)" ng-model="vm.salesItem.conTerminationOther" ng-required="vm.salesItem.conTermination == '5'" ng-maxlength="255">
+                </div>
+                <span class="help-block has-error" ng-show="salesForm.conTerminationOther.$touched">
+            <span ng-show="salesForm.conTerminationOther.$error.required">Required.</span>
+                <span ng-show="salesForm.conTerminationOther.$error.minlength">Min length 1 characters</span>
+                <span ng-show="salesForm.conTerminationOther.$error.maxlength">Max length 255 characters</span>
+                </span>
+            </div>
         </div>
-        <div class="form-group" ng-class="{'has-error':salesForm.elIndoorBreaker.$invalid && salesForm.elIndoorBreaker.$touched}">
-            <label class="control-label" for="elIndoorBreaker">Indoor Breaker Size and Poles </label>
 
-            <input type="text" class="form-control textbox-medium" id="elIndoorBreaker" name="elIndoorBreaker" aria-describedby="elIndoorBreaker" placeholder="Indoor Breaker Size and Poles" ng-model="vm.salesItem.elIndoorBreaker" ng-length="255">
-
-            <span class="help-block has-error" ng-show="salesForm.elIndoorBreaker.$touched">            
-<span ng-show="salesForm.elIndoorBreaker.$error.maxlength">Max 255 characters.</span> </span>
+        <div class="form-group" ng-class="{'has-error':salesForm.conHumidifier.$invalid}">
+            <label for="conHumidifier" class="control-label">Humidifier sold?</label><span style='color:red'>*</span>
+            <div class="radio radio-success">
+                <input type="radio" name="conHumidifier" required ng-model="vm.salesItem.conHumidifier" value="Yes" required>
+                <label>Yes</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conHumidifier" required ng-model="vm.salesItem.conHumidifier" value="No" required>
+                <label>No</label>
+            </div>
         </div>
-        <div class="form-group" style="display:none;" ng-class="{'has-error':salesForm.elIndoorBreaker2.$invalid && salesForm.elIndoorBreaker2.$touched}">
-            <label class="control-label" for="elIndoorBreaker2">Indoor Breaker #2 Size and Poles</label>
 
-            <input type="text" class="form-control textbox-medium" id="elIndoorBreaker2" name="elIndoorBreaker2" aria-describedby="elIndoorBreaker2" placeholder="Indoor Breaker #2 Size and Poles" ng-model="vm.salesItem.elIndoorBreaker2" ng-maxlength="255">
-
-            <span class="help-block has-error" ng-show="salesForm.elIndoorBreaker2.$touched">            
-<span ng-show="salesForm.elIndoorBreaker2.$error.maxlength">Max 255 characters.</span> </span>
+        <div class="form-group" ng-class="{'has-error':salesForm.conTStat.$invalid}">
+            <label for="conTStat" class="control-label">T-stat sold?</label><span style='color:red'>*</span>
+            <div class="radio radio-success">
+                <input type="radio" name="conTStat" required ng-model="vm.salesItem.conTStat" value="Yes" required>
+                <label>Yes</label>
+            </div>
+            <div class="radio radio-success">
+                <input type="radio" name="conTStat" required ng-model="vm.salesItem.conTStat" value="No" required>
+                <label>No</label>
+            </div>
         </div>
+        <div class="form-group textbox-medium" ng-class="{'has-error':salesForm.conReasonForReplacement.$invalid && salesForm.conReasonForReplacement.$touched}">
+            <label for="conReasonForReplacement" class="control-label">Reason for replacement</label><span style='color:red'>*</span>
+            <div class="input-group"> <span class="input-group-addon required">*</span>
+                <input type="text" class="form-control textbox-medium" id="conReasonForReplacement" name="conReasonForReplacement" aria-describedby="conReasonForReplacement" placeholder="Reason for replacement(Required)" ng-model="vm.salesItem.conReasonForReplacement" required ng-maxlength="255">
+            </div>
+            <span class="help-block has-error" ng-show="salesForm.conReasonForReplacement.$touched">
+            <span ng-show="salesForm.conReasonForReplacement.$error.required">Required.</span>
+            <span ng-show="salesForm.conReasonForReplacement.$error.minlength">Min length 1 characters</span>
+            <span ng-show="salesForm.conReasonForReplacement.$error.maxlength">Max length 255 characters</span>
+            </span>
+        </div>
+        <div class="form-group" ng-class="{'has-error':salesForm.conComments.$invalid && salesForm.conComments.$touched}">
+            <label for="conComments" class="control-label">Comments</label>
+
+            <textarea rows="6" class="form-control textbox-medium" id="conComments" name="conComments" aria-describedby="conComments" placeholder="Enter comments max 500 characters." ng-model="vm.salesItem.conComments" ng-maxlength="500">
+            </textarea>
+            <span class="help-block has-error" ng-show="salesForm.conComments.$touched">
+            <span ng-show="salesForm.conComments.$error.required">Required.</span>
+            <span ng-show="salesForm.conComments.$error.minlength">Min length 1 characters</span>
+            <span ng-show="salesForm.conComments.$error.maxlength">Max length 500 characters</span>
+            </span>
+        </div>
+
+        <fieldset>
+            <legend>Indoor Pics</legend>
+            <input type="file" name="fileIndoor" id="fileIndoor">
+            <div class="form-group">
+                <div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Max file size 4 MB, allowed file types .gif, .jpg, .jpeg, .png</div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Outdoor Pics</legend>
+            <input type="file" name="fileOutdoor" id="fileOutdoor">
+            <div class="form-group">
+                <div class="screen-tip"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Info:</span> Max file size 4 MB, allowed file types .gif, .jpg, .jpeg, .png</div>
+            </div>
+        </fieldset>
     </fieldset>
 </div>
