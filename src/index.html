@@ -37,12 +37,9 @@
                     <li class="active"><a href="#step1" data-toggle="tab">Attic</a></li>
                     <li><a href="#step2" data-toggle="tab">AC/HP</a></li>
                     <li><a href="#step3" data-toggle="tab">Furnace</a></li>
-                    <li><a href="#step4" data-toggle="tab">Air Handler</a></li>
-                    <li><a href="#step5" data-toggle="tab">EC</a></li>
-                    <li><a href="#step6" data-toggle="tab">Evap Coil</a></li>
-                    <li><a href="#step7" data-toggle="tab">AH / EC</a></li>
-                    <li><a href="#step8" data-toggle="tab">Electrical</a></li>
-                    <li><a href="#step9" data-toggle="tab">Condensate</a></li>
+                    <li><a href="#step4" data-toggle="tab">Evap Coil</a></li>
+                    <li><a href="#step5" data-toggle="tab">Electrical</a></li>
+                    <li><a href="#step6" data-toggle="tab">Condensate</a></li>
                 </ul>
             </div>
             <!-- Tab panes started -->
@@ -76,31 +73,12 @@
                     <li class="active"><a href="#step1" data-toggle="tab">Attic</a></li>
                     <li><a href="#step2" data-toggle="tab">AC/HP</a></li>
                     <li><a href="#step3" data-toggle="tab">Furnace</a></li>
-                    <li><a href="#step4" data-toggle="tab">Air Handler</a></li>
-                    <li><a href="#step5" data-toggle="tab">EC</a></li>
-                    <li><a href="#step6" data-toggle="tab">Evap Coil</a></li>
-                    <li><a href="#step7" data-toggle="tab">AH / EC</a></li>
-                    <li><a href="#step8" data-toggle="tab">Electrical</a></li>
-                    <li><a href="#step9" data-toggle="tab">Condensate</a></li>
+                    <li><a href="#step4" data-toggle="tab">Evap Coil</a></li>
+                    <li><a href="#step5" data-toggle="tab">Electrical</a></li>
+                    <li><a href="#step6" data-toggle="tab">Condensate</a></li>
                 </ul>
             </div>
         </div>
-        {{salesForm.$invalid}}
-
-        <script>
-            $(document).ready(function () {
-
-                $('input[type=file]').change(function () {
-                    alert(1);
-                    var val = $(this).val().toLowerCase();
-                    var regex = new RegExp("(.*?)\.(jpg|png|gif|jpeg)$");
-                    if (!(regex.test(val))) {
-                        $(this).val('');
-                        alert('Please select correct file format');
-                    }
-                });
-            });
-        </script>
 </body>
 
 </html>
