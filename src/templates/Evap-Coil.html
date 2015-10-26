@@ -1,0 +1,115 @@
+<fieldset>
+    <legend>EC Coil</legend>
+    <div class="form-group" ng-class="{'has-error':salesForm.ecCoil.$invalid}">
+        <label for="ecCoil" class="control-label">EC Coil</label><span style='color:red'>*</span>
+        <div class="radio radio-success">
+            <input type="radio" name="ecCoil" ng-model="vm.salesItem.ecCoil" value="Yes" required>
+            <label>Yes</label>
+        </div>
+        <div class="radio radio-success">
+            <input type="radio" name="ecCoil" ng-model="vm.salesItem.ecCoil" value="No" required>
+            <label>No</label>
+        </div>
+    </div>
+    <fieldset>
+        <div class="form-group" ng-class="{'has-error':salesForm.ecModel.$invalid && salesForm.ecModel.$touched}">
+            <label class="control-label" for="ecModel">Model</label>
+
+            <input type="text" class="form-control textbox-medium" id="ecModel" name="ecModel" aria-describedby="ecModel" placeholder="Enter Model" ng-model="vm.salesItem.ecModel" ng-maxlength="255">
+
+            <span class="help-block has-error" ng-show="salesForm.ecModel.$touched">            
+        <span ng-show="salesForm.ecModel.$error.maxlength">Max length 255 characters</span>
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':salesForm.ecTonnage.$invalid && salesForm.ecTonnage.$touched}">
+            <label class="control-label" for="ecTonnage">Tonnage</label>
+
+            <input type="text" class="form-control textbox-medium" id="ecTonnage" name="ecTonnage" aria-describedby="ecTonnage" placeholder="Enter Tonnage" ng-model="vm.salesItem.ecTonnage" ng-maxlength="255">
+
+            <span class="help-block has-error" ng-show="salesForm.ecTonnage.$touched">            
+        <span ng-show="salesForm.ecTonnage.$error.maxlength">Max length 255 characters</span>
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':salesForm.ecManufacturer.$invalid && salesForm.ecManufacturer.$touched}">
+            <label class="control-label" for="achpManufacturer">Manufacturer</label>
+
+            <input type="text" class="form-control textbox-medium" id="ecManufacturer" name="ecManufacturer" aria-describedby="ecManufacturer" placeholder="Enter Manufacturer" ng-model="vm.salesItem.ecManufacturer" ng-maxlength="255">
+
+            <span class="help-block has-error" ng-show="salesForm.ecManufacturer.$touched">            
+        <span ng-show="salesForm.ecManufacturer.$error.maxlength">Max length 255 characters</span>
+            </span>
+        </div>
+        <div class="form-group" ng-class="{'has-error':salesForm.ecCoilHeight.$invalid && salesForm.ecCoilHeight.$touched}">
+            <label class="control-label" for="ecCoilHeight">Coil Height</label>
+
+            <input type="number" class="form-control textbox-medium" id="ecCoilHeight" name="ecCoilHeight" aria-describedby="ecCoilHeight" placeholder="Enter Coil Height" ng-model="vm.salesItem.ecCoilHeight">
+
+            <span class="help-block has-error" ng-show="salesForm.ecCoilHeight.$touched">            
+        <span ng-show="salesForm.ecCoilHeight.$error.number">Should be number</span>
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':salesForm.ecCoilWidth.$invalid && salesForm.ecCoilWidth.$touched}">
+            <label class="control-label" for="ecCoilWidth">Coil Width</label>
+
+            <input type="number" class="form-control textbox-medium" id="ecCoilWidth" name="ecCoilWidth" aria-describedby="ecCoilWidth" placeholder="Enter Coil Width" ng-model="vm.salesItem.ecCoilWidth">
+
+            <span class="help-block has-error" ng-show="salesForm.ecCoilWidth.$touched">            
+        <span ng-show="salesForm.ecCoilWidth.$error.number">should be number.</span>
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':salesForm.acCoilDepth.$invalid && salesForm.acCoilDepth.$touched}">
+            <label class="control-label" for="acCoilDepth">Coil Depth</label>
+
+            <input type="number" class="form-control textbox-medium" id="acCoilDepth" name="acCoilDepth" aria-describedby="acCoilDepth" placeholder="Enter Coil Depth" ng-model="vm.salesItem.acCoilDepth">
+
+            <span class="help-block has-error" ng-show="salesForm.acCoilDepth.$touched">            
+        <span ng-show="salesForm.acCoilDepth.$error.number">Should be number.</span>
+            </span>
+        </div>
+
+
+        <div class="form-group" ng-class="{'has-error':salesForm.ecFoolrMaxWorkingHeight.$invalid && salesForm.ecFoolrMaxWorkingHeight.$touched}">
+            <label class="control-label" for="ecFoolrMaxWorkingHeight">Floor to Max Working Height</label>
+
+            <input type="number" class="form-control textbox-medium" id="ecFoolrMaxWorkingHeight" name="ecFoolrMaxWorkingHeight" aria-describedby="ecFoolrMaxWorkingHeight" placeholder="Enter Floor to Max Working Height" ng-model="vm.salesItem.ecCoilHeight">
+
+            <span class="help-block has-error" ng-show="salesForm.ecFoolrMaxWorkingHeight.$touched">            
+        <span ng-show="salesForm.ecFoolrMaxWorkingHeight.$error.number">Should be number</span>
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':salesForm.ecPlenumHeight.$invalid && salesForm.ecPlenumHeight.$touched}">
+            <label class="control-label" for="ecPlenumHeight">Plenum Height</label>
+
+            <input type="number" class="form-control textbox-medium" id="ecPlenumHeight" name="ecPlenumHeight" aria-describedby="ecPlenumHeight" placeholder="Enter Plenum Height" ng-model="vm.salesItem.ecPlenumHeight">
+
+            <span class="help-block has-error" ng-show="salesForm.ecPlenumHeight.$touched">            
+        <span ng-show="salesForm.ecPlenumHeight.$error.number">should be number.</span>
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':salesForm.ecPlenumWidth.$invalid && salesForm.ecPlenumWidth.$touched}">
+            <label class="control-label" for="ecPlenumWidth">Plenum Width</label>
+
+            <input type="number" class="form-control textbox-medium" id="ecPlenumWidth" name="ecPlenumWidth" aria-describedby="ecPlenumWidth" placeholder="Enter Plenum Width" ng-model="vm.salesItem.ecPlenumWidth">
+
+            <span class="help-block has-error" ng-show="salesForm.ecPlenumWidth.$touched">            
+        <span ng-show="salesForm.ecPlenumWidth.$error.number">Should be number.</span>
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':salesForm.ecPlenumDepth.$invalid && salesForm.ecPlenumDepth.$touched}">
+            <label class="control-label" for="ecPlenumDepth">Plenum Depth</label>
+
+            <input type="number" class="form-control textbox-medium" id="ecPlenumDepth" name="ecPlenumDepth" aria-describedby="ecPlenumDepth" placeholder="Enter Plenum Depth" ng-model="vm.salesItem.ecPlenumDepth">
+
+            <span class="help-block has-error" ng-show="salesForm.ecPlenumDepth.$touched">            
+        <span ng-show="salesForm.ecPlenumDepth.$error.number">Should be number.</span>
+            </span>
+        </div>
+    </fieldset>
+</fieldset>
